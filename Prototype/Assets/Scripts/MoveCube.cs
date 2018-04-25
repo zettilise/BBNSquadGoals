@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class MoveCube : MonoBehaviour {
 
+	public float moveSpeed = 3f;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.z+=.1f;
-			this.transform.position = position;
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.z-=.1f;
-			this.transform.position = position;
-		}
+	void FixedUpdate () {
+
+		transform.Translate(Vector3.forward * Time.deltaTime * Input.GetAxis("Vertical")* moveSpeed);
+
+
 	}
 }

@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ButtonScript.cs" />
+     <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />

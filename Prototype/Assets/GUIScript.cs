@@ -11,9 +11,12 @@ public class GUIScript : MonoBehaviour {
     Button[][] uiButtons;
     Text[][] uiText;
     int[] opaqueness;
+
+
     
 	// Use this for initialization
 	void Start () {
+		
         Button[][] tempButtons = {new Button[] { GameObject.Find("Info_Button").GetComponent<Button>(), GameObject.Find("Play_Button").GetComponent<Button>()},
             new Button[] { },
             new Button[] { GameObject.Find("Back_Button").GetComponent<Button>()},

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,13 +62,17 @@ public class ObjectPooler : MonoBehaviour {
 			objectToSpawn.transform.position = position;
 			objectToSpawn.transform.rotation = rotation;
 
-			poolDictionary [tag].Enqueue (objectToSpawn);
+		IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject> ();
+
+		if (pooledObj != null) {
+			pooledObj.OnObjectSpawn ();
+
+		}
+
+
+		poolDictionary [tag].Enqueue (objectToSpawn);
 		return objectToSpawn;
 	}
 
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

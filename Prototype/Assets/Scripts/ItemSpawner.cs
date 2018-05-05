@@ -22,8 +22,17 @@ public class ItemSpawner : MonoBehaviour {
 	}
 
 
+
+	/*public float upForce = 1f;
+	 * public float side force = .1f
+	 * 
+	 * start(){
+	 * float XForce = Random.Range(-sideForce, sideForce);
+	 * 
+
+	*/
+
 	void FixedUpdate(){
 		ObjectPooler.Instance.SpawnFromPool ("Tomato", transform.position, Quaternion.identity);
-
 	}
 }

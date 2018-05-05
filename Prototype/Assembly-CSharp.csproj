@@ -84,10 +84,12 @@
      <Compile Include="Assets\Imported\ProCore\Polybrush\Code\Scripts\Utility\z_Vector.cs" />
      <Compile Include="Assets\Imported\Real-Time Procedural Cable Simple\Scripts\Cable_Procedural_Simple.cs" />
      <Compile Include="Assets\Imported\Real-Time Procedural Cable Simple\Scripts\Cable_Procedural_Static.cs" />
-     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\IPooledObject.cs" />
      <Compile Include="Assets\Scripts\ItemSpawner.cs" />
      <Compile Include="Assets\Scripts\MoveCube.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
+     <Compile Include="Assets\Scripts\ObjVelocitizer.cs" />
+     <Compile Include="Assets\Scripts\TomatoThrower.cs" />
      <None Include="Assets\Imported\ProCore\Polybrush\Shader\z_TriPlanarBlend_SfSrc.shader" />
      <None Include="Assets\Imported\ProCore\Polybrush\Shader\z_TextureBlendMobile.shader" />
      <None Include="Assets\Imported\ProCore\Polybrush\README.txt" />

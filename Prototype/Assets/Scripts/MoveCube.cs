@@ -11,18 +11,26 @@ public class MoveCube : MonoBehaviour {
 	private Vector3 startPos;
 
 	public Text deathText;
-	private int deaths;
+	public int deaths;
 
 	public Text lives;
+
+
+	public Button ReplayButton;
+
+	public GameObject ReplayActive;
 
 	// Use this for initialization
 	void Start ()
 	{
+		//ReplayActive = GameObject.FindGameObjectWithTag ("Replay");
 		lives.enabled = true;
 		deaths = 3;
 		deathText.enabled = false;
 		startPos = transform.position;
 		SetLivesText ();
+
+		ReplayButton.onClick.AddListener (ResetStats); // YOYOYOY
 	}
 
 	void SetLivesText()
@@ -38,7 +46,7 @@ public class MoveCube : MonoBehaviour {
 		transform.Translate(Vector3.forward * Time.deltaTime * Input.GetAxis("Horizontal")* moveSpeed);
 		transform.Translate(Vector3.up * Time.deltaTime * Input.GetAxis("Jump")* jumpHeight);
 
-
+		
 
 		if (transform.position.y < .6f) 
 		{
@@ -54,9 +62,21 @@ public class MoveCube : MonoBehaviour {
 				deathText.enabled = true;
 				lives.text = "X_X";
 				transform.position = startPos;
+				ReplayActive.SetActive (true); // YOYOY
 			}
 
 		}
+
+	}
+
+	void ResetStats(){
+		lives.enabled = true;
+		deaths = 3;
+		deathText.enabled = false;
+		startPos = transform.position;
+		SetLivesText ();
+		ReplayActive.SetActive (false);
+		Debug.Log ("resetted stats");
 
 	}
 }

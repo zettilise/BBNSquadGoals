@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Replay
+  - Heart
+  - Pin
+  - Tomato
   layers:
   - Default
   - TransparentFX

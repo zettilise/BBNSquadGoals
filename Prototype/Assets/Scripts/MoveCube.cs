@@ -20,16 +20,24 @@ public class MoveCube : MonoBehaviour {
 
 	public GameObject ReplayActive;
 
+	public float score;
+
+	public GameObject TomatoThrower;
+	public GameObject LivesThrower;
+	public GameObject PinThrower;
+	public GameObject PinThrower2;
+
+	public GameObject ScoreText;
+
+
 	// Use this for initialization
 	void Start ()
 	{
-		//ReplayActive = GameObject.FindGameObjectWithTag ("Replay");
 		lives.enabled = true;
 		deaths = 3;
 		deathText.enabled = false;
 		startPos = transform.position;
 		SetLivesText ();
-
 		ReplayButton.onClick.AddListener (ResetStats); // YOYOYOY
 	}
 
@@ -59,10 +67,23 @@ public class MoveCube : MonoBehaviour {
 			} 
 			else 
 			{
+				
+
 				deathText.enabled = true;
 				lives.text = "X_X";
 				transform.position = startPos;
+
+				ScoreText.SetActive(true);
+				ScoreText.GetComponent<Text>().text = "Score: " + score;
+
+
+
 				ReplayActive.SetActive (true); // YOYOY
+				LivesThrower.SetActive(false);
+				TomatoThrower.SetActive(false);
+				PinThrower.SetActive(false);
+				//PinThrower2.SetActive (false);
+
 			}
 
 		}
@@ -78,5 +99,34 @@ public class MoveCube : MonoBehaviour {
 		ReplayActive.SetActive (false);
 		Debug.Log ("resetted stats");
 
+		LivesThrower.SetActive(false);
+		PinThrower.SetActive(false);
+		PinThrower2.SetActive (false);
+		TomatoThrower.SetActive(false);
+
 	}
+
+	void OnCollisionEnter(Collision collision){
+		Debug.Log ("have collided with " + collision.gameObject.tag);
+
+		if (collision.gameObject.tag == "Heart") {
+
+		}
+	}
+
+	void OnTriggerEnter (Collider other){
+		Debug.Log("trigger of " + other.gameObject.tag);
+
+		if (other.gameObject.tag == "Pin") {
+			score += 5;
+			other.gameObject.SetActive (false);
+		}
+
+		if (other.gameObject.tag == "Heart") {
+			deaths++;
+			SetLivesText();
+			other.gameObject.SetActive (false);
+		}
+	}
+		
 }

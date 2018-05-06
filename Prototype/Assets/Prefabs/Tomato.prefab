@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23639443311090392}
   - component: {fileID: 54611583677566536}
   - component: {fileID: 135151233571693362}
-  - component: {fileID: 114709151399680198}
+  - component: {fileID: 114382551252152278}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Tomato
@@ -100,7 +100,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114709151399680198
+--- !u!114 &114382551252152278
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790331841104960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac7cf3583c26544d9c30dd32744afee, type: 3}
+  m_Script: {fileID: 11500000, guid: b73375104eb914cebbe5e9fdececc33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4
@@ -119,7 +119,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1790331841104960}
   m_Material: {fileID: 13400000, guid: 321437497801b64439c7a52a80888b90, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.18291195

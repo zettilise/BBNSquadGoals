@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4739285861012142}
   - component: {fileID: 33529489725421562}
   - component: {fileID: 23234959691230614}
+  - component: {fileID: 114321110127782368}
+  - component: {fileID: 136620796519426500}
   m_Layer: 0
   m_Name: BowlingPin
   m_TagString: Pin
@@ -83,3 +85,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423989905696276}
   m_Mesh: {fileID: 4300000, guid: 1111e57f306af454e8729c0278f45b62, type: 3}
+--- !u!114 &114321110127782368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423989905696276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73375104eb914cebbe5e9fdececc33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 4
+--- !u!136 &136620796519426500
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423989905696276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.007485158
+  m_Height: 0.047103714
+  m_Direction: 1
+  m_Center: {x: 6.9849193e-10, y: 0.016608315, z: -6.9849193e-10}

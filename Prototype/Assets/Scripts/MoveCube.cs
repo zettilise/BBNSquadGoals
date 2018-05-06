@@ -75,14 +75,12 @@ public class MoveCube : MonoBehaviour {
 
 				ScoreText.SetActive(true);
 				ScoreText.GetComponent<Text>().text = "Score: " + score;
-
-
-
+		
 				ReplayActive.SetActive (true); // YOYOY
 				LivesThrower.SetActive(false);
 				TomatoThrower.SetActive(false);
 				PinThrower.SetActive(false);
-				//PinThrower2.SetActive (false);
+				PinThrower2.SetActive (false);
 
 			}
 
@@ -97,12 +95,15 @@ public class MoveCube : MonoBehaviour {
 		startPos = transform.position;
 		SetLivesText ();
 		ReplayActive.SetActive (false);
-		Debug.Log ("resetted stats");
 
+		score = 0;
 		LivesThrower.SetActive(false);
 		PinThrower.SetActive(false);
 		PinThrower2.SetActive (false);
 		TomatoThrower.SetActive(false);
+
+
+		Debug.Log ("resetted stats");
 
 	}
 

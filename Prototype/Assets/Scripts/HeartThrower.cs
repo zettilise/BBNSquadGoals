@@ -31,7 +31,7 @@ public class HeartThrower : MonoBehaviour {
 			itemToThrow.transform.position = itemToThrow.transform.position + force;
 
 		} else {
-			number = Random.Range (0, 500);
+			number = Random.Range (0, 1000);
 
 			if (number <= chanceNumber) {//if (Random.Range(0,chanceNumber) == 0){
 			itemToThrow.transform.position = OriginalPos;

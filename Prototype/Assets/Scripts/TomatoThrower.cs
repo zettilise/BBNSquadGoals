@@ -17,13 +17,9 @@ public class TomatoThrower : MonoBehaviour {
 
 
 	void Start () {
-
 		OriginalPos = itemToThrow.transform.position;
-
-
 	}
-
-
+		
 	void Update () {
 		OriginalPos = Thrower.transform.position;
 		timeCount++;
@@ -42,30 +38,12 @@ public class TomatoThrower : MonoBehaviour {
 		}
 
 		if (timeCount % 500 == 0) { // every ten seconds
-		//	DisableAfterTime timeScript = itemToThrow.GetComponent<DisableAfterTime>();
 
-			if (force.x < .5) {
+			if (force.x > -.5) {// as long as force isn't as big as -.5
 				force.x -= 0.05f;
 			}
 
 		}
 
 	}
-
-	/*
-	void FixedUpdate(){
-		timeCount++;
-		if (timeCount % cycleAmount == 0) {
-			increaseLikelihood ();
-		}
-
-
-	}
-	void increaseLikelihood(){
-		if (chanceNumber != 1) {
-			chanceNumber--;
-		}
-	}
-*/
-
 }

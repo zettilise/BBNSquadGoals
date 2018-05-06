@@ -137,7 +137,7 @@ public class MoveCube : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 		Debug.Log ("have collided with " + collision.gameObject.tag);
 
-		if (collision.gameObject.tag == "Heart") {
+		if (collision.gameObject.tag == "Tomato") {
 
 		}
 	}

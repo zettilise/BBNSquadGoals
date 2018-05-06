@@ -36,7 +36,9 @@ public class MoveCube : MonoBehaviour {
 
 	public AudioSource Pin;
 	public AudioSource Heart;
-
+	public AudioSource Tomato;
+	public AudioSource dedFall;
+	public AudioSource completeDeath;
 
 
 	// Use this for initialization
@@ -79,6 +81,7 @@ public class MoveCube : MonoBehaviour {
 			
 			if (deaths != 0) 
 			{
+				dedFall.Play ();
 				transform.position = startPos;
 				deaths--;
 				SetLivesText ();
@@ -99,7 +102,7 @@ public class MoveCube : MonoBehaviour {
 				TomatoThrower.SetActive(false);
 				PinThrower.SetActive(false);
 				PinThrower2.SetActive (false);
-
+				completeDeath.Play ();
 			}
 
 		}
@@ -157,6 +160,10 @@ public class MoveCube : MonoBehaviour {
 			SetLivesText();
 			other.gameObject.SetActive (false);
 			Heart.Play ();
+		}
+
+		if (other.gameObject.tag == "Tomato") {
+			Tomato.Play ();
 		}
 	}
 		

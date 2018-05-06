@@ -3,7 +3,7 @@ SceneListBegin?
 Assets/Scenes/Prototype.unity
 SceneListEnd?
 07701aa818d962a77e81dc66b620136d Assembly-CSharp.dll:.DisableAfterTime
-511a219ed2552715ac5d77f83bc4c80e Assembly-CSharp.dll:.MoveCube
+8b69a767014a379203428cdf489ead9e Assembly-CSharp.dll:.MoveCube
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset

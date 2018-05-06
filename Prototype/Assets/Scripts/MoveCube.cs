@@ -30,15 +30,33 @@ public class MoveCube : MonoBehaviour {
 	public GameObject ScoreText;
 
 
+	public Text HighScore;
+	public Text CurrScore;
+	private int highScore;
+
+	public AudioSource Pin;
+	public AudioSource Heart;
+
+
+
 	// Use this for initialization
 	void Start ()
 	{
+		highScore = 0;
+
 		lives.enabled = true;
 		deaths = 3;
 		deathText.enabled = false;
 		startPos = transform.position;
 		SetLivesText ();
 		ReplayButton.onClick.AddListener (ResetStats); // YOYOYOY
+		SetScoreText();
+	}
+
+	void SetScoreText()
+	{
+		HighScore.text = "High Score: " + highScore;
+		CurrScore.text = "Score: " + score;
 	}
 
 	void SetLivesText()
@@ -67,7 +85,7 @@ public class MoveCube : MonoBehaviour {
 			} 
 			else 
 			{
-				
+				SetScoreText ();
 
 				deathText.enabled = true;
 				lives.text = "X_X";
@@ -85,10 +103,14 @@ public class MoveCube : MonoBehaviour {
 			}
 
 		}
-
+		SetScoreText ();
 	}
 
 	void ResetStats(){
+
+		if ((int)score > highScore)
+			highScore = (int)score;
+
 		lives.enabled = true;
 		deaths = 3;
 		deathText.enabled = false;
@@ -101,6 +123,11 @@ public class MoveCube : MonoBehaviour {
 		PinThrower.SetActive(false);
 		PinThrower2.SetActive (false);
 		TomatoThrower.SetActive(false);
+
+
+	
+		SetScoreText ();
+
 
 
 		Debug.Log ("resetted stats");
@@ -121,12 +148,15 @@ public class MoveCube : MonoBehaviour {
 		if (other.gameObject.tag == "Pin") {
 			score += 5;
 			other.gameObject.SetActive (false);
+			Pin.Play ();
+			SetScoreText ();
 		}
 
 		if (other.gameObject.tag == "Heart") {
 			deaths++;
 			SetLivesText();
 			other.gameObject.SetActive (false);
+			Heart.Play ();
 		}
 	}
 		
